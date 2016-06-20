@@ -1,0 +1,74 @@
+﻿<Window x:Name="mainWindow" x:Class="PAIN_Lab5_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PAIN_Lab5_WPF"
+        mc:Ignorable="d"
+        Title="Quiz Flag" Height="549.649" Width="787.117">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image" Grid.Column="1" Margin="62,4.5,50,30" Source="Flags/0.png" Grid.Row="1"/>
+        <TextBox x:Name="AnswerBox" Grid.Column="1" Height="30" Margin="174,0,174,10" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="18.667" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Grid.Row="2" KeyDown="AnswerBox_KeyDown" Visibility="Hidden"/>
+        <Grid Grid.ColumnSpan="2" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="41"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="124*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="113*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="39"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="playButton" Content="Graj" Grid.Column="3" Margin="0" VerticalAlignment="Top" Width="184" Height="38" FontSize="21.333" Click="playButton_Click" Background="#FF5D78F7" FontFamily="Jokerman"/>
+            <Button x:Name="noIdeaButton" Content="Nie wiem" Grid.Column="1" Margin="0,0,0,37" VerticalAlignment="Bottom" Width="130" FontSize="18.667" Height="33" Click="noIdeaButton_Click" Visibility="Hidden" Background="#FF90C5B9"/>
+            <Button x:Name="hintButton" Content="Podpowiedź" Grid.Column="5" Margin="0" VerticalAlignment="Top" Width="130" FontSize="18.667" Height="33" Click="hintButton_Click" BorderThickness="1" Visibility="Hidden" Background="#FF90C5B9"/>
+            <Button x:Name="answerButton" Content="Odpowiadam" Grid.Column="3" Margin="0" VerticalAlignment="Top" Width="136" Click="answerButton_Click" Height="29" FontSize="18.667" Visibility="Hidden" Background="#FF90C5B9"/>
+        </Grid>
+        <Label x:Name="yourScoreLabel" Grid.ColumnSpan="2" Content="Twój wynik:" Margin="0,0,174,0" FontSize="16" HorizontalAlignment="Right" Width="101" Visibility="Hidden"/>
+        <Label x:Name="scoreLabel" Grid.ColumnSpan="2" Content="" Margin="0,0,50,0" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Right" Width="119" Visibility="Hidden"/>
+        <Grid x:Name="categoriesPanel" Grid.ColumnSpan="2" Margin="0" Grid.RowSpan="4" UseLayoutRounding="False" HorizontalAlignment="Center" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="14*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="categoryLabel" Content="Wybierz kategorię" FontSize="24" HorizontalAlignment="Center" Background="{x:Null}" FontWeight="Bold" FontFamily="Jokerman" Margin="64,0,63,0"/>
+            <Button x:Name="allButton" Content="Wszystkie kategorie" FontSize="21.333" Background="#FFF345D4" Padding="1" Click="allButton_Click" MinHeight="35" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="2"/>
+            <Button x:Name="europeButton" Content="Europa" FontSize="21.333" Background="#FFEA2525" Click="europeButton_Click" MinHeight="35" Height="33" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="4"/>
+            <Button x:Name="northAmericaButton" Content="Ameryka Północna" FontSize="21.333" Background="#FFF5780E" Click="northAmericaButton_Click" MinHeight="35" Height="33" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="6"/>
+            <Button x:Name="southAmericaButton" Content="Ameryka Południowa" FontSize="21.333" Background="#FFF3DF13" Click="southAmericaButton_Click" MinHeight="35" Height="33" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="8"/>
+            <Button x:Name="africaButton" Content="Afryka" FontSize="21.333" Background="#FF64EA25" Click="africaButton_Click" MinHeight="35" Height="33" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="10"/>
+            <Button x:Name="asiaButton" Content="Azja" FontSize="21.333" Background="#FF3B78E4" Click="asiaButton_Click" MinHeight="35" Height="33" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="12"/>
+            <Button x:Name="oceaniaButton" Content="Australia i Oceania" Click="oceaniaButton_Click" FontSize="21.333" Background="#FF7C2ECB" MinHeight="35" Height="34" FontFamily="Jokerman" Margin="-1,0,0,0" Grid.Row="14"/>
+        </Grid>
+        <Button x:Name="backToMenuButton" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top" Width="50" Height="50" Grid.RowSpan="2" Click="backToMenuButton_Click" BorderThickness="0" Visibility="Hidden">
+            <Button.Background>
+                <ImageBrush ImageSource="Flags\Menu.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
